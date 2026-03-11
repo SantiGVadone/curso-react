@@ -9,23 +9,13 @@ export function App() {
       <TwitterFollowCard
       formatUserName={format}
       isFollowing 
-      userName="midudev"
-      name= "Miguel Angel Duran"
-      />
-
-      <TwitterFollowCard
-      formatUserName={format}
-      isFollowing={false} 
-      userName="pheralb"
-      name= "Pablo Hernandez"
-      />
+      userName="midudev"> Miguel Angel Duran </TwitterFollowCard> 
+      
 
       <TwitterFollowCard
       formatUserName={format}
       isFollowing 
-      userName="vegetta777"
-      name= "Samuel De Luque"
-      />
+      userName="vegetta777">Samuel De Luque</TwitterFollowCard> 
   </section>
     )
 }

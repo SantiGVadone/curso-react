@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/SantiGVadone/curso-react/issues"
   },
-  "homepage": "https://github.com/SantiGVadone/curso-react#readme"
+  "homepage": "https://github.com/SantiGVadone/curso-react#readme",
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
 }

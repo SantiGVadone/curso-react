@@ -1,0 +1,26 @@
+body{
+    background-color: #2b2b2b;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 10px;
+    font-family: system-ui;
+    gap: 1rem;
+}
+
+h1:hover {
+    color: #a8dab8;
+    cursor: default;
+    transition: 1s;
+}
+
+img {
+    max-width: 450px;
+    max-height: 600px;
+}

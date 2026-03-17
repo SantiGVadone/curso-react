@@ -1,13 +1,59 @@
-# Prubea tecnica para Juniors y Trainees de React en Live Coding.
+# 🐱 Cat Facts App - Prueba Técnica React
 
-APIs:
-- Facts Random: https://catfact.ninja/fact
-- Image Random: http://cataas.com/cat/says/hello
+Este proyecto es una aplicación desarrollada en React que consume dos APIs públicas para mostrar datos curiosos de gatos junto con imágenes personalizadas. Es un ejercicio clásico en entrevistas de **Live Coding** para perfiles **Junior y Trainee**.
 
-Recupera un hecho aleatorio de gatos de la primera API y muestra una imagen de un gato(recuperada desde la segunda API) con la primera palabla del hecho recuperado.
+---
 
+## 🚀 Objetivo de la Prueba
+La aplicación debe realizar el siguiente flujo de datos:
+1.  **Recuperar un hecho aleatorio** de gatos desde la primera API.
+2.  **Extraer la primera palabra** del hecho recuperado.
+3.  **Mostrar una imagen de un gato** (desde la segunda API) que incluya esa palabra específica.
 
-pasos:
-- PRIMERO RECUPERAR UN HECHO ALEATORIO
-- SEGUNDO RECUPERAR LA PRIMER PALABRA DE ESE HECHO 
-- TERCERO MUESTRA UNA IMAGEN DE UN GATO CON LA PRIMERA PALABRA DEL PASO 2
+---
+
+## 🛠️ Stack Tecnológico
+* **React** (Vite)
+* **JavaScript (ES6+)**
+* **CSS3** para el diseño.
+* **Standard JS / ESLint** para el estilo de código.
+
+---
+
+## 🔌 APIs Utilizadas
+* [**Cat Facts API**](https://catfact.ninja/fact): Para obtener el hecho aleatorio (`fact`).
+* [**CATAAS (Cats as a Service)**](https://cataas.com/): Para generar la imagen dinámica utilizando la palabra extraída.
+
+---
+
+## 📋 Pasos del Desarrollo
+
+1.  **Fetch de Datos:** Implementación de una petición asíncrona al endpoint de hechos.
+2.  **Lógica de Negocio:** Uso de métodos de strings (`split(' ', 1)`) para obtener la primera palabra de forma limpia.
+3.  **Construcción de URL:** Generación de la URL dinámica para la imagen: `https://cataas.com/cat/says/${firstWord}`.
+4.  **Manejo de Estado:** Uso de `useState` para almacenar el hecho y la imagen, y `useEffect` para disparar la lógica al cargar la página.
+
+---
+
+## 🔧 Instalación y Ejecución
+
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone https://github.com/SantiGVadone/curso-react.git
+    ```
+2.  **Instalar dependencias:**
+    ```bash
+    npm install
+    ```
+3.  **Correr el proyecto:**
+    ```bash
+    npm run dev
+    ```
+
+---
+
+## 💡 Conceptos Aplicados
+* **Hooks:** `useState` y `useEffect`.
+* **Asincronía:** Promesas con `.then()` o `async/await`.
+* **Renderizado Condicional:** Para asegurar que los datos existan antes de mostrarlos.
+* **Clean Code:** Estructura de archivos organizada y nombres de variables descriptivos.

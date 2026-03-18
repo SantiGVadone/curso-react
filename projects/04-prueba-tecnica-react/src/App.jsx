@@ -1,45 +1,28 @@
 import { useState, useEffect } from 'react'
+import { getRandomFact } from './services/facts'
 import './App.css'
-const CAT_ENDPOINT_RANDOM_FACT = 'https://catfact.ninja/fact'
+import { useCatImage } from './hooks/useCatImage' //import mi custom hook y lo puedo usar donde quiera
+
 export function App() {
   const [fact, setFact] = useState()
-  const [imageUrl, setImageUrl] = useState()
-  const [factError, setFactError] = useState()
+  const { imageUrl } = useCatImage({ fact })
 
   //recupera la cita/hecho cada vez que se recarga la pagina
   useEffect(() => {
-    fetch(CAT_ENDPOINT_RANDOM_FACT)
-      .then((res) => {
-        if (!res.ok) {
-          setFactError('No se ha podido recuperar la cita')
-          throw new Error('Error fetching fact')
-        }
-        return res.json()
-      })
-      .then((data) => {
-        const { fact } = data
-        setFact(fact)
-      })
-      .catch((error) => {
-        setFact(factError)
-      })
+    getRandomFact().then(setFact)
   }, [])
-  //recupera la imagen cada vez que tenemos una cita/hecho nuevo
-  useEffect(() => {
-    if (!fact) return
-    const firstWord = fact.split(' ')[0]
 
-    fetch(`https://cataas.com/cat/says/${firstWord}?json=true`)
-      .then((res) => res.json())
-      .then((response) => {
-        const { url } = response
-        setImageUrl(url)
-      })
-  }, [fact])
+  const handleClick = async () => {
+    const newFact = await getRandomFact()
+    setFact(newFact)
+  }
 
   return (
     <main>
       <h1 className="titulo">App de gatitos</h1>
+      <button className="button" onClick={handleClick}>
+        Get new fact
+      </button>
       {fact && <p>{fact}</p>}
       {imageUrl && (
         <img

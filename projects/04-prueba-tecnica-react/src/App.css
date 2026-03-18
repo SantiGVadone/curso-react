@@ -24,3 +24,20 @@ img {
     max-width: 450px;
     max-height: 600px;
 }
+
+.button {
+    padding: 10px 20px;
+    background-color: #585858;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+}
+
+.button:hover {
+    background-color: #6b6b6b;
+}
+
+.button:active{
+    background-color: #424242;
+}

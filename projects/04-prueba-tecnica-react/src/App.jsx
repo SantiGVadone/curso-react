@@ -4,25 +4,38 @@ const CAT_ENDPOINT_RANDOM_FACT = 'https://catfact.ninja/fact'
 export function App() {
   const [fact, setFact] = useState()
   const [imageUrl, setImageUrl] = useState()
+  const [factError, setFactError] = useState()
 
+  //recupera la cita/hecho cada vez que se recarga la pagina
   useEffect(() => {
     fetch(CAT_ENDPOINT_RANDOM_FACT)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          setFactError('No se ha podido recuperar la cita')
+          throw new Error('Error fetching fact')
+        }
+        return res.json()
+      })
       .then((data) => {
         const { fact } = data
         setFact(fact)
-
-        const firstWord = fact.split(' ')[0]
-
-        fetch(`https://cataas.com/cat/says/${firstWord}?json=true`)
-          .then((res) => res.json())
-          .then((response) => {
-            const { url } = response
-            setImageUrl(url)
-            console.log(url)
-          })
+      })
+      .catch((error) => {
+        setFact(factError)
       })
   }, [])
+  //recupera la imagen cada vez que tenemos una cita/hecho nuevo
+  useEffect(() => {
+    if (!fact) return
+    const firstWord = fact.split(' ')[0]
+
+    fetch(`https://cataas.com/cat/says/${firstWord}?json=true`)
+      .then((res) => res.json())
+      .then((response) => {
+        const { url } = response
+        setImageUrl(url)
+      })
+  }, [fact])
 
   return (
     <main>
@@ -30,8 +43,9 @@ export function App() {
       {fact && <p>{fact}</p>}
       {imageUrl && (
         <img
+          title={fact.split(' ')[0]}
           src={imageUrl}
-          alt={`Image extracted using the first trhee words for ${fact}`}
+          alt={`Image extracted using the first word of: ${fact}`}
         />
       )}
     </main>

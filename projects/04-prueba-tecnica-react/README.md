@@ -57,3 +57,6 @@ La aplicación debe realizar el siguiente flujo de datos:
 * **Asincronía:** Promesas con `.then()` o `async/await`.
 * **Renderizado Condicional:** Para asegurar que los datos existan antes de mostrarlos.
 * **Clean Code:** Estructura de archivos organizada y nombres de variables descriptivos.
+
+* **Video 4 🕛:** Me quede en el minuto 21 de la clase 4, terminando de crear el primer customHook.
+ 

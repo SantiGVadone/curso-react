@@ -4,13 +4,16 @@ Crea una aplicación para buscar películas
 
 API a usar: - https://www.omdbapi.com/
 Consigue la API Key en la propia página web registrando tu email.
-API_KEY= 6b83aa96
+Mi API Key esta en mi archivo .env por una cuestion de privasidad
 
-Requerimientos:
+✔️ Requerimientos:
 
 ✅ Necesita mostrar un input para buscar la película y un botón para buscar.
 
-- Lista las películas y muestra el título, año y poster.
+✅ Lista las películas y muestra el título, año y poster.
+
+⌛ Me quede en el minuto 25:55 de este video: (va a arrancar a hacer el customHook useMemo)
+📹 https://www.youtube.com/watch?v=GOEiMwDJ3lc&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29&index=5
 
 - Que el formulario funcione
 
@@ -18,7 +21,7 @@ Requerimientos:
 
 - Hacer el fetching de datos a la API
 
-Primera iteración:
+✋ Primera iteración:
 
 - Evitar que se haga la misma búsqueda dos veces seguidas.
 

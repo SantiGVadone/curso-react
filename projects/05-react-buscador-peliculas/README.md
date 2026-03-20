@@ -12,7 +12,7 @@ Mi API Key esta en mi archivo .env por una cuestion de privasidad
 
 ✅ Lista las películas y muestra el título, año y poster.
 
-⌛ Me quede en el minuto 25:55 de este video: (va a arrancar a hacer el customHook useMemo)
+⌛ 
 📹 https://www.youtube.com/watch?v=GOEiMwDJ3lc&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29&index=5
 
 - Que el formulario funcione

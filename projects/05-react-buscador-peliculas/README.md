@@ -12,10 +12,7 @@ Mi API Key esta en mi archivo .env por una cuestion de privasidad
 
 ✅ Lista las películas y muestra el título, año y poster.
 
-⌛ 
-📹 https://www.youtube.com/watch?v=GOEiMwDJ3lc&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29&index=5
-
-- Que el formulario funcione
+✅ Que el formulario funcione
 
 - Haz que las películas se muestren en un grid responsive.
 
@@ -28,3 +25,8 @@ Mi API Key esta en mi archivo .env por una cuestion de privasidad
 - Haz que la búsqueda se haga automáticamente al escribir.
 
 - Evita que se haga la búsqueda continuamente al escribir (debounce)
+
+
+
+⌛ 
+📹 https://www.youtube.com/watch?v=GOEiMwDJ3lc&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29&index=5

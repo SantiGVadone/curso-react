@@ -1,7 +1,7 @@
-import { useEffect, useState, useRef } from 'react'
-import './App.css'
-import { Movie } from './Movies'
-import { useMovie } from './hooks/useMovies'
+import { useEffect, useState, useRef } from 'react' //estos son los hooks que uso de react
+import './App.css' //estos son mis estilos
+import { Movie } from './Movies' //este es mi componente
+import { useMovie } from './hooks/useMovies' //este es mi customHooks
 //import { useRef } from 'react'
 
 function useSearch() {
@@ -62,12 +62,12 @@ function App() {
     "name_input_5": 'Contendio del input 5'
     }
   */
-  const { movies } = useMovie()
   const { search, updateSearch, error } = useSearch()
+  const { movies, getMovies, loading } = useMovie({ search })
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log({ search })
+    getMovies()
   }
 
   const handleChange = (event) => {
@@ -89,9 +89,7 @@ function App() {
         </form>
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </header>
-      <main>
-        <Movie movies={movies} />
-      </main>
+      <main>{loading ? <p>Cargando ...</p> : <Movie movies={movies} />}</main>
     </div>
   )
 }

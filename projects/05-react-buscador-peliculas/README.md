@@ -14,19 +14,19 @@ Mi API Key esta en mi archivo .env por una cuestion de privasidad
 
 ✅ Que el formulario funcione
 
-- Haz que las películas se muestren en un grid responsive.
+✅ Haz que las películas se muestren en un grid responsive.
 
-- Hacer el fetching de datos a la API
+✅ Hacer el fetching de datos a la API
 
-✋ Primera iteración:
+✋ Primera iteración (vamos a complicarlo un poco): 
 
-- Evitar que se haga la misma búsqueda dos veces seguidas.
+✅ Evitar que se haga la misma búsqueda dos veces seguidas.
 
-- Haz que la búsqueda se haga automáticamente al escribir.
+⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️
+⌛ Me quede en el 1:34:00 <-- aca esta la explicacion de useMemo
+📹 https://www.youtube.com/watch?v=GOEiMwDJ3lc&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29&index=5&t=5640s
+⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️⚛️
 
-- Evita que se haga la búsqueda continuamente al escribir (debounce)
+❎ Haz que la búsqueda se haga automáticamente al escribir.
 
-
-
-⌛ 
-📹 https://www.youtube.com/watch?v=GOEiMwDJ3lc&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29&index=5
+❎ Evita que se haga la búsqueda continuamente al escribir (debounce)

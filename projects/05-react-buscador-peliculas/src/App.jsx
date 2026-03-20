@@ -1,11 +1,12 @@
+import { useEffect, useState } from 'react'
 import './App.css'
 import { Movie } from './Movies'
 import { useMovie } from './hooks/useMovies'
-import { useRef } from 'react'
+//import { useRef } from 'react'
 
 function App() {
   const { movies } = useMovie()
-  const inputRef = useRef() //<-- no hay que abusar de esto
+  //const inputRef = useRef() //<-- no hay que abusar de esto
   /*
   una forma de recuperar el dato del input sin necesidad del useRef puede ser esta:
   const handleSubmit = (event) => {
@@ -31,12 +32,33 @@ function App() {
     "name_input_5": 'Contendio del input 5'
     }
   */
+  const [query, setQuery] = useState('')
+  const [error, setError] = useState(null)
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const fields = new window.FormData(event.target)
-    const query = fields.get('query')
-    console.log(query)
+    console.log({ query })
+  }
+
+  const handleChange = (event) => {
+    const newQuery = event.target.value
+    setQuery(newQuery)
+
+    if (newQuery === '') {
+      setError('No se puede buscar una pelicula vacia')
+      return
+    }
+
+    if (newQuery.match(/^\d+$/)) {
+      setError('No se puede buscar una pelicula con numeros')
+      return
+    }
+
+    if (newQuery.length <= 2) {
+      setError('La busqueda debe tener al menos 2 caracteres')
+      return
+    }
+    setError(null)
   }
 
   return (
@@ -46,11 +68,13 @@ function App() {
         <form className='form' onSubmit={handleSubmit}>
           <input
             name='query'
-            ref={inputRef}
+            onChange={handleChange}
+            value={query}
             placeholder='Avengers, Star Wars, The Matrix ...'
           />
           <button type='submit'>Buscar</button>
         </form>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
       </header>
       <main>
         <Movie movies={movies} />

@@ -1,8 +1,8 @@
-import { useEffect, useState, useRef } from 'react' //estos son los hooks que uso de react
+import { useEffect, useState, useRef, useMemo } from 'react' //estos son los hooks que uso de react
 import './App.css' //estos son mis estilos
 import { Movie } from './Movies' //este es mi componente
 import { useMovie } from './hooks/useMovies' //este es mi customHooks
-//import { useRef } from 'react'
+import debounce from 'just-debounce-it'
 
 function useSearch() {
   const [search, updateSearch] = useState('')
@@ -62,16 +62,33 @@ function App() {
     "name_input_5": 'Contendio del input 5'
     }
   */
+  const [sort, setSort] = useState(false)
   const { search, updateSearch, error } = useSearch()
-  const { movies, getMovies, loading } = useMovie({ search })
+  const { movies, getMovies, loading } = useMovie({ search, sort })
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    getMovies()
+    getMovies({ search })
   }
 
+  const debouncedGetMovies = useMemo(
+    //podria usar el useCallbacks tambien pero me da error el eslint porque le estoy pasando el resultado de la funcion debounce, no una funcion inline
+    () =>
+      debounce((search) => {
+        console.log('search', search)
+        getMovies({ search })
+      }, 300),
+    [getMovies],
+  )
+
   const handleChange = (event) => {
-    updateSearch(event.target.value)
+    const newSearch = event.target.value
+    updateSearch(newSearch)
+    debouncedGetMovies(newSearch)
+  }
+
+  const handleSort = () => {
+    setSort(!sort)
   }
 
   return (
@@ -85,6 +102,7 @@ function App() {
             value={search}
             placeholder='Avengers, Star Wars, The Matrix ...'
           />
+          <input type='checkbox' onChange={handleSort} checked={sort} />
           <button type='submit'>Buscar</button>
         </form>
         {error && <p style={{ color: 'red' }}>{error}</p>}

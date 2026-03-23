@@ -16,6 +16,6 @@ Haz uso de useContext para evitar pasar props innecesarias.
 - Sincroniza los cambios del carrito con la lista de productos.
 - Guarda en un localStorage el carrito para que se recupere al recargar la página. (da puntos)
 
-📹https://www.youtube.com/watch?v=B9tDYAZZxcE&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29&index=7
+- 📹https://www.youtube.com/watch?v=B9tDYAZZxcE&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29&index=7
 
-➡️Me quede en el minuto 10:40⬅️
+- [o] ⏱️⏱️

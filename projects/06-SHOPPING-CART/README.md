@@ -6,7 +6,7 @@
 - ✅ Añade un filtro por categoría
 - ✅ Añade un filtro por precio
 
-Haz uso de useContext para evitar pasar props innecesarias.
+✅ Haz uso de useContext para evitar pasar props innecesarias.
 
 2. Carrito:
 
@@ -18,4 +18,4 @@ Haz uso de useContext para evitar pasar props innecesarias.
 
 - 📹https://www.youtube.com/watch?v=B9tDYAZZxcE&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29&index=7
 
-- [o] ⏱️⏱️
+- ⏱️⏱️

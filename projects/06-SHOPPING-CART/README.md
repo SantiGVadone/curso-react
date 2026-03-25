@@ -14,9 +14,12 @@
 - ✅ Haz que se puedan eliminar los productos del carrito.
 - ✅ Haz que se puedan modificar la cantidad de productos del carrito.
 - ✅ Sincroniza los cambios del carrito con la lista de productos.
+
+- ✅ Aprendiendo useReducer
+
 -  Guarda en un localStorage el carrito para que se recupere al recargar la página. (da puntos)
 
 - 📹https://www.youtube.com/watch?v=B9tDYAZZxcE&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29&index=10&t=6000s
 
 
-- ⬆️⏱️1hs 40min⏱️
+- ⬆️⏱️⏱️
